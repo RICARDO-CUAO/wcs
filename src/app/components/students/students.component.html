@@ -1,0 +1,29 @@
+<div class="example-container mat-elevation-z8">
+    <h2>Estudiantes</h2>
+    <div class="demo-button-container">
+        <button mat-stroked-button color="primary">Crear Solicitud</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="example-table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Patronus</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.patronus }}</td>
+                    <td>{{ student.yearOfBirth != "" ? 2021 - student.yearOfBirth : "Desconocida"}}</td>
+                    <td>
+                        <img [src]="student.image" alt="" srcset="" style="width:100px; height: 100px">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

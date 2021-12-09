@@ -1,0 +1,26 @@
+<div class="example-container mat-elevation-z8">
+    <h2>Profesores</h2>
+    <div class="example-table-container">
+        <mat-divider></mat-divider>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Patronus</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let teacher of teachers">
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.patronus }}</td>
+                    <td>{{ teacher.yearOfBirth != "" ? 2021 - teacher.yearOfBirth : "Desconocida"}}</td>
+                    <td>
+                        <img [src]="teacher.image" alt="" srcset="" style="width:100px; height: 100px">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="example-container mat-elevation-z8">
+  <h2>Personajes</h2>
+  <mat-divider></mat-divider>
+    <mat-form-field appearance="fill">
+      <mat-label>Casa de Hechicería</mat-label>
+      <form [formGroup]="formCharacters">
+        <mat-select formControlName="select" class="form-select" [(ngModel)]="selected">
+          <mat-option *ngFor="let house of houses" [value]="house.name">{{ house.name }}</mat-option>
+        </mat-select>
+      </form>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="selectCharacters()">
+      Buscar
+    </button>
+    <mat-divider></mat-divider>
+    <div class="mat-elevation-z8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Patronus</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let character of characters">
+          <td>{{ character['name'] }}</td>
+          <td>{{ character['patronus'] }}</td>
+          <td>{{ character['yearOfBirth'] != "" ? 2021 - character['yearOfBirth'] : "Desconocida"}}</td>
+          <td>
+            <img [src]="character['image']" alt="" srcset="" style="width:100px; height: 100px">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
