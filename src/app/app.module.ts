@@ -22,13 +22,17 @@ import { AppComponent } from './app.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { StudentsComponent } from './components/students/students.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
+import { RequestsComponent } from './components/requests/requests.component';
+import { RequestsListComponent } from './components/requests-list/requests-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
     StudentsComponent,
-    TeachersComponent
+    TeachersComponent,
+    RequestsComponent,
+    RequestsListComponent
   ],
   imports: [
     BrowserModule,
