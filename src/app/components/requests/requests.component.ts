@@ -21,6 +21,8 @@ export class RequestsComponent implements OnInit {
   yearOfBirth!: string;
   sex!: string;
 
+  submitted = false;
+
   constructor(
     private formBuilder: FormBuilder
   ) { }
@@ -30,7 +32,7 @@ export class RequestsComponent implements OnInit {
   }
 
   formValidation() {
-    this.formRequests = this.formBuilder.group({
+    this.formRequests! = this.formBuilder.group({
       firstName: new FormControl("Nombre Requerido", [
         Validators.required
            
@@ -46,6 +48,10 @@ export class RequestsComponent implements OnInit {
         Validators.required         
       ])
     })
+  }
+
+  onSubmit(): void {
+    alert('Thanks!');
   }
 
 }
