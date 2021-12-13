@@ -1,1 +1,52 @@
-<p>requests works!</p>
+<form [formGroup]="formRequests">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>
+                Crear Solicitud
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="firstName" class="form-input" [(ngModel)]="firstName" placeholder="Nombre">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="lastName" class="form-input" [(ngModel)]="lastName" placeholder="Apellido">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="yearOfBirth" class="form-input" [(ngModel)]="yearOfBirth" placeholder="Fecha de Nacimiento">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Sexo</mat-label>
+                        <mat-select formControlName="sex" class="form-select" [(ngModel)]="sex">
+                            <mat-option *ngFor="let sex of sexes" [value]="sex.name">
+                                {{ sex.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-stroked-button color="secundary" type="submit">
+                Cancelar
+            </button>
+            <button mat-stroked-button color="primary" type="button">
+                Aceptar
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>

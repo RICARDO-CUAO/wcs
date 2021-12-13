@@ -8,6 +8,7 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RequestsListComponent } from './components/requests-list/requests-list.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'app', pathMatch: 'full' },
   { path: 'characters', component: CharactersComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'teachers', component: TeachersComponent },
